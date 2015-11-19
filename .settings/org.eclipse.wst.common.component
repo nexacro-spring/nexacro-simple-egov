@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+	<!-- ${module} module name.. -->
+    <wb-module deploy-name="${module}">
+        <wb-resource deploy-path="/WEB-INF/web.xml" source-path="/src/main/webapp/WEB-INF/web.xml"/>
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="nexacro-core-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/nexacro-core/nexacro-core">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="nexacro-excel-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/nexacro-excel/nexacro-excel">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="nexacro-dataaccess-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/nexacro-dataaccess/nexacro-dataaccess">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/${module}/target/classes"/>
+        <property name="context-root" value="nexacro-egov"/>
+    </wb-module>
+</project-modules>
