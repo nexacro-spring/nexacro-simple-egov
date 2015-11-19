@@ -50,7 +50,7 @@
         <Logger name="com.nexacro.spring" level="TRACE" additivity="false">
             <AppenderRef ref="console" />
         </Logger>
-        <Logger name="nexacro" level="DEBUG" additivity="false">
+        <Logger name="nexacro.sample" level="DEBUG" additivity="false">
             <AppenderRef ref="console" />
         </Logger>
         <Root level="DEBUG">

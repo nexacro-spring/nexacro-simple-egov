@@ -8,7 +8,7 @@
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
 
     <aop:config>
-		<aop:pointcut id="serviceMethod" expression="execution(* nexacro..service.impl.*Impl.*(..))" />
+		<aop:pointcut id="serviceMethod" expression="execution(* nexacro.sample..service.impl.*Impl.*(..))" />
 
 		<aop:aspect ref="exceptionTransfer">
 			<aop:after-throwing throwing="exception" pointcut-ref="serviceMethod" method="transfer" />
