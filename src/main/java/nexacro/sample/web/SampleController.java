@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.nexacro.spring.annotation.ParamDataSet;
 import com.nexacro.spring.data.NexacroResult;
-import com.nexacro.xapi.data.Debugger;
-import com.nexacro.xapi.data.PlatformData;
 
 import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 
@@ -40,19 +38,7 @@ public class SampleController {
     private SampleService sampleService;
     
     @RequestMapping(value = "/sampleSelectVO.do")
-    public NexacroResult selectVo(
-                            @ParamDataSet(name="ds_search", required=false) List<SampleVO> searchVOList
-                            , PlatformData platformData){
-        
-        if (log.isDebugEnabled()) {
-            System.out.println("SampleController.selectVo()");
-            log.debug("SampleController.selectVo(). data="+new Debugger().detail(platformData));
-        }
-        
-        SampleVO searchVo = null;
-        if(searchVOList != null && searchVOList.size() > 0) {
-            searchVo = searchVOList.get(0);
-        }
+	public NexacroResult selectVo(@ParamDataSet(name = "ds_search", required = false) SampleVO searchVo) {
         
         List<SampleVO> sampleList = sampleService.selectSampleVOList(searchVo);
         
@@ -63,19 +49,7 @@ public class SampleController {
     }
     
     @RequestMapping(value = "/sampleSelectVOFromMap.do")
-    public NexacroResult selectVoFromMap(
-    		@ParamDataSet(name="ds_search", required=false) List<SampleVO> searchVOList
-    		, PlatformData platformData){
-    	
-    	if (log.isDebugEnabled()) {
-    		System.out.println("SampleController.selectVo()");
-    		log.debug("SampleController.selectVoFromMap(). data="+new Debugger().detail(platformData));
-    	}
-    	
-    	SampleVO searchVo = null;
-    	if(searchVOList != null && searchVOList.size() > 0) {
-    		searchVo = searchVOList.get(0);
-    	}
+	public NexacroResult selectVoFromMap(@ParamDataSet(name = "ds_search", required = false) SampleVO searchVo) {
     	
     	List<Map> sampleList = sampleService.selectSampleMapList(searchVo);
     	
@@ -86,14 +60,7 @@ public class SampleController {
     }
     
     @RequestMapping(value = "/sampleModifyVO.do")
-    public NexacroResult modifyVO(
-                            @ParamDataSet(name="input1") List<SampleVO> modifyList
-                            , PlatformData platformData){
-        
-        if (log.isDebugEnabled()) {
-            System.out.println("SampleController.modifyVO");
-            log.debug("SampleController.selectVo(). data="+new Debugger().detail(platformData));
-        }
+	public NexacroResult modifyVO(@ParamDataSet(name = "input1") List<SampleVO> modifyList) {
         
         sampleService.modifyMultiSampleVO(modifyList);
         
@@ -104,21 +71,14 @@ public class SampleController {
     
     
     @RequestMapping(value = "/samplePaging.do")
-    public NexacroResult selectPaging(
-                            @ParamDataSet(name="ds_search", required=false) List<SampleVO> searchVOList
-                            ){
+	public NexacroResult selectPaging(@ParamDataSet(name = "ds_search", required = false) SampleVO searchVO) {
     
-        SampleVO searchVO = null;
-        if(searchVOList != null && searchVOList.size() > 0) {
-            searchVO = searchVOList.get(0);
-        }
         if(searchVO == null) {
         	searchVO = new SampleVO();
         }
 
         searchVO.setPageUnit(10);
         searchVO.setPageSize(10);
-
         
     	PaginationInfo paginationInfo = new PaginationInfo();
     	paginationInfo.setCurrentPageNo(searchVO.getPageIndex());
