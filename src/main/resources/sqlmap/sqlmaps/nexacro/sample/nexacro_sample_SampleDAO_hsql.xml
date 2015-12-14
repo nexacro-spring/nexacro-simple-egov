@@ -60,7 +60,7 @@
                 A.COMMUNITY_ID AS COMMUNITY_ID,
                 A.HIT_COUNT AS HIT_COUNT
             FROM TB_BOARD A
-            WHERE 1=0
+            WHERE 1=1
             <dynamic>
                 <isNotNull prepend=" AND " property="title">
                 	TITLE LIKE '%' || #title# || '%'
