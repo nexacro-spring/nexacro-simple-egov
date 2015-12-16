@@ -110,7 +110,7 @@ public class NexacroIbatisAbstractDAO extends EgovAbstractDAO {
     
     public void queryWithFirstRowHandler(String queryId, Object parameterObject, NexacroFirstRowHandler firstRowHandler, String sendName, int firstRowCount) {
     	SqlMapClientRowHandler rowHandler = new SqlMapClientRowHandler(firstRowHandler, sendName, firstRowCount);
-        getSqlMapClientTemplate().queryWithRowHandler("largeDataDAO.selectLargeData", null, rowHandler);
+        getSqlMapClientTemplate().queryWithRowHandler(queryId, parameterObject, rowHandler);
         
         // send remain data..
         rowHandler.sendRemainData();
