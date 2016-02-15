@@ -10,6 +10,11 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
+	<!-- project configuration -->
+	<bean id="mvcPropertyPlaceholderConfigurer" class="com.nexacro.spring.beans.factory.config.MvcPropertyPlaceholderConfigurer">
+		<constructor-arg ref="propertyPlaceholderConfigurer" />
+	</bean>
+
     <!-- The controllers are autodetected POJOs labeled with the @Controller annotation. -->
     <context:component-scan base-package="nexacro.sample.**.web">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>

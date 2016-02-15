@@ -12,5 +12,11 @@
 			<url>ENC(itpK0ouWPt1+G3/9bpqxEYSZ1Yx/NmNc/cNC2u2jpwFCHlm1aP+xXjAa/jrALm0ESR+DckZCbEsXlkoq3nyHJQ==)</url>
 			<user>ENC(Fv/Z5H8O6CrJ+EYSiIYhkw==)</user>
 		</hsql>
-	</jdbcs>	
+	</jdbcs>
+	<beans>
+		<exceptionResolver>
+			<shouldLogStackTrace>true</shouldLogStackTrace>
+			<shouldSendStackTrace>true</shouldSendStackTrace>
+		</exceptionResolver>
+	</beans>
 </configuratons>
