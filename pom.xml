@@ -4,7 +4,7 @@
 	<groupId>com.nexacro.archetype</groupId>
 	<artifactId>nexacro-simple-egov</artifactId>
 	<packaging>war</packaging>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>nexacro-simple-egov Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	
@@ -24,6 +24,7 @@
 	<repositories>
   		<repository>
 			<id>tobesoft</id>
+			<!-- <url>file://C:/eGovFrame-3.5/maven/repository</url> -->
 			<url>http://cacao.tobesoft.co.kr/nexus/content/groups/public/</url>
 			<releases>
 				<enabled>true</enabled>
