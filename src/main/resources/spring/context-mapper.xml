@@ -17,6 +17,7 @@
 	<!-- scan for mappers and let them be autowired -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="nexacro.sample.service.dao.mybatis;com.nexacro.spring.dao.mybatis" />
+        <property name="annotationClass" value="egovframework.rte.psl.dataaccess.mapper.Mapper" />
     </bean>
 	
 </beans>
